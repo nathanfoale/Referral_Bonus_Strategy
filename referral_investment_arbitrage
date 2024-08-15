@@ -1,0 +1,95 @@
+#eToro Referral Bonus Strategy
+
+# This section of the code calculates and displays the financial outcomes assuming you successfully 
+# refer 10 people to the trading platform. It shows the total initial investment, referral bonus earnings, 
+# withdrawn amount after investing $100 per person, the total return, and the net profit from these 10 referrals.
+
+# Example calculations for 10 referrals
+
+initial_investment_per_person <- 500
+
+number_of_people <- 10
+referral_bonus_per_person <- 200
+withdrawal_fee_per_person <- 5
+investment_in_stock <- 100
+
+
+# Initial Investment 
+total_initial_investment <- initial_investment_per_person * number_of_people
+
+
+# Referral Bonus Reward
+total_referral_bonus <- referral_bonus_per_person * number_of_people
+
+
+# Amount Withdrawn
+amount_withdrawn_per_person <- initial_investment_per_person - investment_in_stock - withdrawal_fee_per_person
+total_withdrawn <- amount_withdrawn_per_person * number_of_people
+
+
+# Total Return
+total_return <- total_withdrawn + total_referral_bonus
+
+
+# Net Profit
+net_profit <- total_return - total_initial_investment
+
+
+# Output of Results
+cat("Initial Investment: $", total_initial_investment, "\n")
+cat("Referral Bonus Total: $", total_referral_bonus, "\n")
+cat("Withdrawn Investment Total: $", total_withdrawn, "\n")
+cat("Return: $", total_return, "\n")
+cat("Net Profit: $", net_profit, "\n")
+
+
+
+# This section of the code allows the user to input the number of people they can refer to the trading platform. 
+# Based on this input, the program calculates the total initial investment, referral bonus earnings, withdrawn amount, 
+# total return, and net profit.
+
+
+# Function to Calculate Profit Based on User Input
+
+calculate_profit <- function(number_of_referrals, initial_investment_per_person = 500, 
+                             referral_bonus_per_person = 200, 
+                             withdrawal_fee_per_person = 5, 
+                             investment_in_stock = 100) {
+  
+  # Initial Investment 
+  total_initial_outlay <- initial_investment_per_person * number_of_referrals
+  
+  # Referral Bonus Reward
+  total_referral_bonus <- referral_bonus_per_person * number_of_referrals
+  
+  # Amount Withdrawn
+  amount_withdrawn_per_person <- initial_investment_per_person - investment_in_stock - withdrawal_fee_per_person
+  total_withdrawn <- amount_withdrawn_per_person * number_of_referrals
+  
+  # Total Return
+  total_return <- total_withdrawn + total_referral_bonus
+  
+  # Net Profit
+  net_profit <- total_return - total_initial_outlay
+
+  # Output of Results
+  print(paste("Total Initial Outlay:", total_initial_outlay))
+  print(paste("Total Referral Bonus:", total_referral_bonus))
+  print(paste("Total Withdrawn:", total_withdrawn))
+  print(paste("Total Return:", total_return))
+  print(paste("Net Profit:", net_profit))
+}
+
+
+# User input for the number of referrals they want to make
+
+number_of_referrals <- as.numeric(readline(prompt="Enter the number of referrals: "))
+
+
+# Results
+calculate_profit(number_of_referrals)
+
+
+# Let x be the number of people you are able to refer
+calculate_profit(x)
+
